@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load static %}<img src="{% static 'img/monitor_logo.png' %}"/>
+{% if user.is_authenticated %}
+    <p>Bienvenido, {{ user.username }}  <a href="{% url 'logout' %}">[logout]</a></p>
+
+	{% else %}
+	    <p>Bienvenido, Invitado <a href="{% url 'login' %}">[login]</a></p>
+	{% endif %}
+	
+	
+{% endblock %}
